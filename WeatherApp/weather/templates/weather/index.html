@@ -14,8 +14,8 @@
         <span class="fs-4">Weather</span>
     </a>
     <nav class="d-inline-flex mt-2 mt-md-0 ms-md-auto">
-        <a class="me-3 py-2 text-dark text-decoration-none" href="#">Главная</a>
-        <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'info' %}">Информация</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'home' %}">Главная</a>
+        <a class="me-3 py-2 text-dark text-decoration-none" href="{% url 'info' %}">Подробная информация</a>
     </nav>
 </div>
 <div class="container mt-5">
@@ -29,23 +29,6 @@
                     <input type="submit" name="send" value="Узнать" class="mt-2 btn btn-info">
                 </div>
             </form>
-        </div>
-        <div class="col-4 offset-1">
-            <h1>Информация</h1>
-            {% for info in all_info %}
-            <div class="alert alert-info">
-                <div class="row">
-                    <div class="col-9">
-                        <b>Город:</b>{{ info.city }}<br>
-                        <b>Тепература:</b>{{ info.temp }}<sup>0</sup><br>
-                        <b>Ветер, м/с:</b>{{ info.speed}}<br>
-                    </div>
-                    <div class="col-2 offset-1">
-                        <img src="http://openweathermap.org/img/w/{{ info.icon }}.png" alt="Фото погоды" class="img-thunbnail">
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
         </div>
     </div>
 </div>
